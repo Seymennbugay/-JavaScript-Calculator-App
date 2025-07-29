@@ -22,9 +22,7 @@ Fully functional using only mouse clicks
 ✅ Vanilla JavaScript
 
 📸 Screenshot
-(Add a screenshot of your calculator UI here)
 
-md
 <img width="1215" height="732" alt="Ekran görüntüsü 2025-07-29 183024" src="https://github.com/user-attachments/assets/1bede8fb-bb28-4fda-a9ba-bcd83b2d259a" />
 
 📂 How to Run Locally
