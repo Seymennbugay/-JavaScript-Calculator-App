@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-yellow-500">
+    
+    <div class="bg-gray-300 w-80 h-80 items-center justify-center rounded-xl">
+        <h1 class="text-2xl text-white font-bold">JAVASCRİPT CALCULATOR</h1>
+        <div><input id="calculate" class="w-full"></div>
+        <div class="flex grid grid-cols-4 px-4 ">
+            <div id="add" class="bg-orange-500 w-6 h-6 rounded-full flex items-center justify-center text-white font-bold my-1 " >+</div>
+            <div id="seven" class="bg-orange-500 w-6 h-6 rounded-full flex items-center justify-center text-white font-bold  my-1" ">7</div>
+            <div id="eight" class="bg-orange-500 w-6 h-6 rounded-full flex items-center justify-center text-white font-bold  my-1">8</div>
+            <div id="nine" class="bg-orange-500 w-6 h-6 rounded-full flex items-center justify-center text-white font-bold  my-1">9</div>
+            <div id="substract" class="bg-orange-500 w-6 h-6 rounded-full flex items-center justify-center text-white font-bold  my-1">-</div>
+            <div id="four" class="bg-orange-500 w-6 h-6 rounded-full flex items-center justify-center text-white font-bold  my-1">4</div>
+            <div id="five" class="bg-orange-500 w-6 h-6 rounded-full flex items-center justify-center text-white font-bold  my-1">5</div>
+            <div id="six" class="bg-orange-500 w-6 h-6 rounded-full flex items-center justify-center text-white font-bold  my-1">6</div>
+            <div id="multiplication" class="bg-orange-500 w-6 h-6 rounded-full flex items-center justify-center text-white font-bold  my-1">*</div>
+            <div id="one" class="bg-orange-500 w-6 h-6 rounded-full flex items-center justify-center text-white font-bold  my-1">1</div>
+            <div id="two" class="bg-orange-500 w-6 h-6 rounded-full flex items-center justify-center text-white font-bold  my-1">2</div>
+            <div id="three" class="bg-orange-500 w-6 h-6 rounded-full flex items-center justify-center text-white font-bold  my-1">3</div>
+            <div id="division" class="bg-orange-500 w-6 h-6 rounded-full flex items-center justify-center text-white font-bold  my-1">/</div>
+            <div id="zero" class="bg-orange-500 w-6 h-6 rounded-full flex items-center justify-center text-white font-bold  my-1">0</div>
+            <div id="dot" class="bg-orange-500 w-6 h-6 rounded-full flex items-center justify-center text-white font-bold  my-1">.</div>
+            <div id="equeal" class="bg-orange-500 w-6 h-6 rounded-full flex items-center justify-center text-white font-bold  my-1">=</div>
+            <div id="clear" class="bg-orange-500 w-6 h-6 rounded-full flex items-center justify-center text-white font-bold  my-1">C</div>
+        </div>
+        
+    </div>
+
+<script>
+  // Hesaplama input'una eriş
+  const input = document.getElementById("calculate");
+
+  // Her tuşa basıldığında çalışacak ana hesap fonksiyonu
+  function calculator(value) {
+    if (value === "=") {
+      try {
+        input.value = eval(input.value); // sonucu hesapla
+      } catch {
+        input.value = "Error"; // hatalıysa
+      }
+    } else if (value === "C") {
+      input.value = ""; // temizle
+    } else {
+      input.value += value; // inputa ekle
+    }
+  }
+
+  // Butonları yakala ve tıklama olaylarını ata
+  document.getElementById("add").onclick = () => calculator("+");
+  document.getElementById("substract").onclick = () => calculator("-");
+  document.getElementById("multiplication").onclick = () => calculator("*");
+  document.getElementById("division").onclick = () => calculator("/");
+
+  document.getElementById("equeal").onclick = () => calculator("=");
+  document.getElementById("clear").onclick = () => calculator("C");
+  document.getElementById("dot").onclick = () => calculator(".");
+
+  document.getElementById("zero").onclick = () => calculator("0");
+  document.getElementById("one").onclick = () => calculator("1");
+  document.getElementById("two").onclick = () => calculator("2");
+  document.getElementById("three").onclick = () => calculator("3");
+  document.getElementById("four").onclick = () => calculator("4");
+  document.getElementById("five").onclick = () => calculator("5");
+  document.getElementById("six").onclick = () => calculator("6");
+  document.getElementById("seven").onclick = () => calculator("7");
+  document.getElementById("eight").onclick = () => calculator("8");
+  document.getElementById("nine").onclick = () => calculator("9");
+</script>
+
+</body>
+</html>    
